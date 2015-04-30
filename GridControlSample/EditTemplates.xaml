@@ -1,0 +1,11 @@
+﻿<ResourceDictionary 
+					x:Class="GridControlSample.EditTemplates"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GridControlSample"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+
+	<DataTemplate DataType="{x:Type local:SampleItemEdit}">
+		<dxe:TextEdit EditValue="{Binding SourceValue}"/>
+	</DataTemplate>
+</ResourceDictionary>

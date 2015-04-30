@@ -1,0 +1,68 @@
+﻿<ResourceDictionary 
+					x:Class="GridControlSample.Views"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GridControlSample"
+	xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid">
+	<DataTemplate DataType="{x:Type local:SampleViewModel}">
+		<Grid>
+			<Grid.Resources>
+				<ResourceDictionary>
+					<ResourceDictionary.MergedDictionaries>
+						<local:DisplayTemplates/>
+						<local:EditTemplates/>
+					</ResourceDictionary.MergedDictionaries>
+				</ResourceDictionary>
+			</Grid.Resources>
+			<local:MyGridControl Name="Grid" ItemsSource="{Binding Items}">
+				<dxg:GridControl.View>
+					<dxg:TableView ShowGroupPanel="False" Name="a" AllowHorizontalScrollingVirtualization="False"></dxg:TableView>
+				</dxg:GridControl.View>
+				<dxg:GridControl.Columns>
+					<dxg:GridColumn Name="Item" 
+								Header="First column with Item"
+								FieldName="Item" AllowEditing="True">
+						<dxg:GridColumn.DisplayTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.Item}" />
+							</ControlTemplate>
+						</dxg:GridColumn.DisplayTemplate>
+						<dxg:GridColumn.EditTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.ItemEdit}" />
+							</ControlTemplate>
+						</dxg:GridColumn.EditTemplate>
+					</dxg:GridColumn>
+					<dxg:GridColumn Name="Item2" 
+								Header="Duplicate of Item to demo navigation"
+								FieldName="Item" AllowEditing="True">
+						<dxg:GridColumn.DisplayTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.Item}" />
+							</ControlTemplate>
+						</dxg:GridColumn.DisplayTemplate>
+						<dxg:GridColumn.EditTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.ItemEdit}" />
+							</ControlTemplate>
+						</dxg:GridColumn.EditTemplate>
+					</dxg:GridColumn>
+					<dxg:GridColumn Name="Item3" 
+								Header="Another duplicate of Item to demo navigation"
+								FieldName="Item" AllowEditing="True">
+						<dxg:GridColumn.DisplayTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.Item}" />
+							</ControlTemplate>
+						</dxg:GridColumn.DisplayTemplate>
+						<dxg:GridColumn.EditTemplate>
+							<ControlTemplate>
+								<ContentControl Content="{Binding RowData.Row.ItemEdit}" />
+							</ControlTemplate>
+						</dxg:GridColumn.EditTemplate>
+					</dxg:GridColumn>
+				</dxg:GridControl.Columns>
+			</local:MyGridControl>
+		</Grid>
+	</DataTemplate>
+</ResourceDictionary>

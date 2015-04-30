@@ -1,0 +1,25 @@
+﻿<Window x:Class="GridControlSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gridControlSample="clr-namespace:GridControlSample"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Title="MainWindow" Height="400" Width="525" >
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<gridControlSample:Views/>
+			</ResourceDictionary.MergedDictionaries>
+			<Style TargetType="{x:Type dxe:TextEdit}" BasedOn="{StaticResource {x:Type dxe:TextEdit}}">
+				<Setter Property="gridControlSample:StylizedBehaviors.Add">
+					<Setter.Value>
+						<gridControlSample:StylizedBehaviorCollection>
+							<gridControlSample:SelectAllTextOnFocusBehavior/>
+						</gridControlSample:StylizedBehaviorCollection>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</Window.Resources>
+	<ContentControl Content="{Binding ViewModel}"></ContentControl>
+</Window>
