@@ -69,6 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ArrowNavigationForTemplatesBehavior.cs" />
     <Compile Include="StylizedBehaviorCollection.cs" />
     <Compile Include="EditTemplates.xaml.cs">
       <DependentUpon>EditTemplates.xaml</DependentUpon>

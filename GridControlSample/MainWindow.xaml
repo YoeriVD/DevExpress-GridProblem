@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:gridControlSample="clr-namespace:GridControlSample"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         Title="MainWindow" Height="400" Width="525" >
 
 	<Window.Resources>
@@ -15,6 +16,15 @@
 					<Setter.Value>
 						<gridControlSample:StylizedBehaviorCollection>
 							<gridControlSample:SelectAllTextOnFocusBehavior/>
+						</gridControlSample:StylizedBehaviorCollection>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style TargetType="{x:Type gridControlSample:MyGridControl}">
+				<Setter Property="gridControlSample:StylizedBehaviors.Add">
+					<Setter.Value>
+						<gridControlSample:StylizedBehaviorCollection>
+							<gridControlSample:ArrowNavigationForTemplatesBehavior/>
 						</gridControlSample:StylizedBehaviorCollection>
 					</Setter.Value>
 				</Setter>
